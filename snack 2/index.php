@@ -25,22 +25,24 @@ $age = $_GET['age'];
 <body>
 
     <?php
-    
     if (strlen($name) > 3 && strpos($mail, '.') !== false && strpos($mail, '@') !== false && is_numeric($age)) {
         echo '<h3>Accesso Riuscito!</h3>';
-    } 
-    else if(strlen($name) < 3){
-        echo '<h3>Accesso Negato! Il tuo nome deve contenere almeno tre caratteri.</h3>';
-    }
-    else if (strlen($name) > 3 && strpos($mail, '.') == false && strpos($mail, '@') == false && is_numeric($age))  {
+    } else if (strlen($name) > 3 && strpos($mail, '.') == false && strpos($mail, '@') == false && is_numeric($age))  {
         echo '<h3>Accesso Negato!</h3>';
     }
-    else if (is_string($age)){
-        echo '<h3>Accesso Negato! Inserisci un numero che indichi la tua età.</h3>';
-    }
-    
+
+    // if (strlen($name) > 3 && strpos($mail, '.') !== false && strpos($mail, '@') !== false && is_numeric($age)) {
+    //     echo '<h3>Accesso Riuscito!</h3>';
+    // } else if (strlen($name) < 3) {
+    //     echo '<h3>Accesso Negato! Il tuo nome deve contenere almeno tre caratteri.</h3>';
+    // } else if (strlen($name) > 3 && strpos($mail, '.') == false && strpos($mail, '@') == false && is_numeric($age)) {
+    //     echo '<h3>Accesso Negato!</h3>';
+    // } else if (is_string($age)) {
+    //     echo '<h3>Accesso Negato! Inserisci un numero che indichi la tua età.</h3>';
+    // }
 
     ?>
+
 </body>
 
 </html>
