@@ -25,14 +25,29 @@ $age = $_GET['age'];
 <body>
 
     <?php
-    if (strlen($name) > 3 && strpos($mail, '.') && strpos($mail, '@') && is_numeric($age)) {
+    
+    if (strlen($name) > 3 && strpos($mail, '.') !== false && strpos($mail, '@') !== false && is_numeric($age)) {
         echo '<h3>Accesso Riuscito!</h3>';
-    } else {
+    } 
+    else if(strlen($name) < 3){
+        echo '<h3>Accesso Negato! Il tuo nome deve contenere almeno tre caratteri.</h3>';
+    }
+    else if (strlen($name) > 3 && strpos($mail, '.') == false && strpos($mail, '@') == false && is_numeric($age))  {
         echo '<h3>Accesso Negato!</h3>';
     }
+    else if (is_string($age)){
+        echo '<h3>Accesso Negato! Inserisci un numero che indichi la tua età.</h3>';
+    }
+    
+
     ?>
 </body>
 
 </html>
 
 <!-- esempio url http://localhost/php-snacks-blocco-1/snack%202/?name=chiara&mail=ciao.ciao@&age=23 -->
+
+
+<!-- strpos() !== false -> serve per sicurezza, quando bisogna chiedere SE E’ PRESENTE
+e per distinguere il caso PRESENTE IN POSIZIONE 0 dal caso NON PRESENTE (FALSE)
+-->
