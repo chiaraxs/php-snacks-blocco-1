@@ -82,33 +82,10 @@ $posts = [
 
 </html>
 
+
+
 <!-- 
     k = key
     v = value 
 -->
 
-<!-- /* foreach example 3: key and value */
-
-$a = array(
-    "one" => 1,
-    "two" => 2,
-    "three" => 3,
-    "seventeen" => 17
-);
-
-foreach ($a as $k => $v) {
-    echo "\$a[$k] => $v.\n";
-}
-
-/* foreach example 4: multi-dimensional arrays */
-$a = array();
-$a[0][0] = "a";
-$a[0][1] = "b";
-$a[1][0] = "y";
-$a[1][1] = "z";
-
-foreach ($a as $v1) {
-    foreach ($v1 as $v2) {
-        echo "$v2\n";
-    }
-} -->
